@@ -1,2 +1,3 @@
-\node_module
-\.env
+.env
+node_modules
+logs
