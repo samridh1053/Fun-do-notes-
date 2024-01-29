@@ -40,7 +40,7 @@ var newUser = exports.newUser = /*#__PURE__*/function () {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
           _context2.next = 2;
-          return _bcrypt["default"].hash(body.password, 10);
+          return _bcrypt["default"].hash(body.password, 11);
         case 2:
           body.password = _context2.sent;
           _context2.next = 5;

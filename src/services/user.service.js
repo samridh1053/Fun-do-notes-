@@ -9,7 +9,7 @@ export const getAllUsers = async () => {
 
 //create new user
 export const newUser = async (body) => {
-  body.password = await bcrypt.hash(body.password,10)
+  body.password = await bcrypt.hash(body.password,11)
   const data = await User.create(body);
   return data;
 };
