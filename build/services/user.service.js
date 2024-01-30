@@ -9,12 +9,6 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _user = _interopRequireDefault(require("../models/user.model"));
 var _bcrypt = _interopRequireDefault(require("bcrypt"));
-// //get all users
-// export const getAllUsers = async () => {
-//   const data = await User.find();
-//   return data;
-// };
-
 //create new user
 var newUser = exports.newUser = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(body) {
@@ -42,26 +36,6 @@ var newUser = exports.newUser = /*#__PURE__*/function () {
   };
 }();
 
-// //update single user
-// export const updateUser = async (_id, body) => {
-//   const data = await User.findByIdAndUpdate(
-//     {
-//       _id
-//     },
-//     body,
-//     {
-//       new: true
-//     }
-//   );
-//   return data;
-// };
-
-// //delete single user
-// export const deleteUser = async (id) => {
-//   await User.findByIdAndDelete(id);
-//   return '';
-// };
-
 //get single user
 var getUser = exports.getUser = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(body) {
@@ -79,7 +53,7 @@ var getUser = exports.getUser = /*#__PURE__*/function () {
             _context2.next = 5;
             break;
           }
-          return _context2.abrupt("return", "Email not found");
+          throw new Error("Email not found");
         case 5:
           _context2.next = 7;
           return _bcrypt["default"].compare(body.password, data.password);

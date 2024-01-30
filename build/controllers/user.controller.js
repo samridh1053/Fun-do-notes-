@@ -12,25 +12,6 @@ var _httpStatusCodes = _interopRequireDefault(require("http-status-codes"));
 var UserService = _interopRequireWildcard(require("../services/user.service"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
-// /**
-//  * Controller to get all users available
-//  * @param  {object} req - request object
-//  * @param {object} res - response object
-//  * @param {Function} next
-//  */
-// export const getAllUsers = async (req, res, next) => {
-//   try {
-//     const data = await UserService.getAllUsers();
-//     res.status(HttpStatus.OK).json({
-//       code: HttpStatus.OK,
-//       data: data,
-//       message: 'All users fetched successfully'
-//     });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
-
 // for registration 
 var getUser = exports.getUser = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res, next) {
@@ -98,41 +79,3 @@ var newUser = exports.newUser = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
-
-// /**
-//  * Controller to update a user
-//  * @param  {object} req - request object
-//  * @param {object} res - response object
-//  * @param {Function} next
-//  */
-// export const updateUser = async (req, res, next) => {
-//   try {
-//     const data = await UserService.updateUser(req.params._id, req.body);
-//     res.status(HttpStatus.ACCEPTED).json({
-//       code: HttpStatus.ACCEPTED,
-//       data: data,
-//       message: 'User updated successfully'
-//     });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
-
-// /**
-//  * Controller to delete a user
-//  * @param  {object} req - request object
-//  * @param {object} res - response object
-//  * @param {Function} next
-//  */
-// export const deleteUser = async (req, res, next) => {
-//   try {
-//     await UserService.deleteUser(req.params._id);
-//     res.status(HttpStatus.OK).json({
-//       code: HttpStatus.OK,
-//       data: [],
-//       message: 'User deleted successfully'
-//     });
-//   } catch (error) {
-//     next(error);
-//   }
-// };
