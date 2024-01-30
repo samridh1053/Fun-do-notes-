@@ -8,15 +8,18 @@ const router = express.Router();
 
 
 //route to create a new user
-router.post('', noteController.newNote);
+router.get('',userAuth, noteController.getAllNotes);
 
 //route to get a single user by their user id
-router.post('/login', noteController.getNote);
+router.get('/:_id', noteController.getNote);
+
+router.post('',noteController.newNote)
+
 
 // //route to update a single user by their user id
-// router.put('/:_id', userController.updateUser);
+router.put('/:_id', noteController.updateNote);
 
 // //route to delete a single user by their user id
-// router.delete('/:_id', userController.deleteUser);
+router.delete('/:_id', noteController.deleteNote);
 
 export default router;
