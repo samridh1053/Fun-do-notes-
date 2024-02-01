@@ -8,10 +8,10 @@ const router = express.Router();
 
 
 //route to create a new user
-router.post('', userAuth,userController.newUser);
+router.post('',userController.newUser);
 
 //route to get a single user by their user id
-router.post('/login', userController.getUser);
+router.post('/login',userAuth, userController.getUser);
 
 // //route to update a single user by their user id
 //router.put('/:_id', userController.updateUser);

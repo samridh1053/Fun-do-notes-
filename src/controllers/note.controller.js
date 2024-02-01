@@ -7,6 +7,7 @@ import * as NoteService from '../services/note.service';
 // for registration
 export const newNote = async (req, res, next) => {
   try {
+  
     const data = await NoteService.newNote(req.body);
     res.status(HttpStatus.CREATED).json({
       code: HttpStatus.CREATED,
