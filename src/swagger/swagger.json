@@ -101,7 +101,12 @@
             "500": {
               "description": "Internal server error"
             }
-          }
+          },
+          "security":[
+            {
+              "JWT":[]
+            }
+          ]
         },
         "get": {
           "tags": ["Notes"],
@@ -116,10 +121,15 @@
             "500": {
               "description": "Internal server error"
             }
-          }
+          },
+          "security":[
+            {
+              "JWT":[]
+            }
+          ]
         }
       },
-      "/notes/:_id":{
+      "/notes/{_id}":{
         "put": {
           "tags": ["Notes"],
           "description": "update notes...",
@@ -143,7 +153,12 @@
             "500": {
               "description": "Internal server error"
             }
-          }
+          },
+          "security":[
+            {
+              "JWT":[]
+            }
+          ]
         },
         "delete": {
           "tags": ["Notes"],
@@ -158,7 +173,12 @@
             "500": {
               "description": "Internal server error"
             }
-          }
+          },
+          "security":[
+            {
+              "JWT":[]
+            }
+          ]
         }
       }
     },
