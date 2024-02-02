@@ -11,7 +11,7 @@ const router = express.Router();
 router.post('',userController.newUser);
 
 //route to get a single user by their user id
-router.post('/login',userAuth, userController.getUser);
+router.post('/login',userController.getUser);
 
 // //route to update a single user by their user id
 //router.put('/:_id', userController.updateUser);

@@ -2,14 +2,14 @@
     "swagger": "2.0",
     "info": {
       "version": "V1",
-      "title": "F App",
-      "description": "CLI App API"
+      "title": "Notes App",
+      "description": "Notes App API"
     },
     "host": "localhost:3000",
     "basePath": "/api/v1/",
     "tags": [
       {
-        "name": "CLI",
+        "name": "User",
         "description": "Creating user......."
       }
     ],
@@ -23,9 +23,9 @@
       "application/json"
     ],
     "paths": {
-      "/user": {
+      "/users": {
         "post": {
-          "tags": ["CLI"],
+          "tags": ["Users"],
           "description": "create name...",
           "parameters": [
             {
@@ -50,9 +50,9 @@
           }
         }
       },
-      "/login": {
+      "/users/login": {
         "post": {
-          "tags": ["CLI"],
+          "tags": ["Users"],
           "description": "login name...",
           "parameters": [
             {
@@ -64,6 +64,90 @@
               }
             }
           ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "201": {
+              "description": "New user is created"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/notes":{
+        "post": {
+          "tags": ["Notes"],
+          "description": "create notes...",
+          "parameters": [
+            {
+              "name": "Creating notes",
+              "in": "body",
+              "description": "Create",
+              "schema": {
+                "$ref": "#/definitions/Notes"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "201": {
+              "description": "New user is created"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        },
+        "get": {
+          "tags": ["Notes"],
+          "description": "fetch notes...",          
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "201": {
+              "description": "New user is created"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        }
+      },
+      "/notes/:_id":{
+        "put": {
+          "tags": ["Notes"],
+          "description": "update notes...",
+          "parameters": [
+            {
+              "name": "Updating notes",
+              "in": "body",
+              "description": "Update",
+              "schema": {
+                "$ref": "#/definitions/Notes"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "201": {
+              "description": "New user is created"
+            },
+            "500": {
+              "description": "Internal server error"
+            }
+          }
+        },
+        "delete": {
+          "tags": ["Notes"],
+          "description": "delete notes...",          
           "produces": [
             "application/json"
           ],
@@ -106,6 +190,17 @@
             "type": "string"
           }
         }
+      },
+      "Notes": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
       }
     },
     "securityDefinitions": {
@@ -114,10 +209,6 @@
         "name": "Authorization",
         "in": "header"
       }
-    },
-    "security": [
-      {
-        "JWT": []
-      }
-    ]
+    }
+   
   }
